@@ -3,9 +3,8 @@ import openai
 from textblob import TextBlob
 import pandas as pd
 
-# Change it to your open ai api key
-openai.api_key = 'OPENAI_API_KEY'
-
+# Securely load OpenAI key from Streamlit secrets
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 # Function to generate a response from GPT-3
 def generate_response(prompt):
