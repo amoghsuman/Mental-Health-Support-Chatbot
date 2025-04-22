@@ -16,7 +16,7 @@ def generate_response(prompt):
                 {"role": "user", "content": prompt}
             ]
         )
-        return response.choices[0].message['content'].strip()
+        return response.choices[0].message.content.strip()
     except openai.RateLimitError:
         return "It seems we have reached the API quota limit. Please try again later or check your OpenAI account."
 
